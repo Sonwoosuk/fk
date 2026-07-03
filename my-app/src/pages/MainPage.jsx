@@ -9,7 +9,7 @@ import { useTouchHover } from '../lib/useTouchHover'
 export default function MainPage() {
   const { hero, collage, collageText, intro } = mainData
   const { collections } = collectionsData
-  const { guardTap, touchHoverClass } = useTouchHover()
+  const { guardTap } = useTouchHover()
 
   useEffect(() => {
     const observerOptions = {
@@ -218,7 +218,7 @@ export default function MainPage() {
           <a
             key={col.id}
             href={`/${col.id}`}
-            className={`collection-banner reveal reveal-up ${touchHoverClass(col.id)}`}
+            className="collection-banner reveal reveal-up"
             onClick={guardTap(col.id)}
             style={{
               transitionDelay: `${idx * 0.1}s`

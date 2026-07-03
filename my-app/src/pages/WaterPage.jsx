@@ -15,7 +15,7 @@ export default function WaterPage() {
   const { hero } = mainData
   const { collection, products, process } = waterData
   const { addItem } = useCart()
-  const { guardTap, touchHoverClass } = useTouchHover()
+  const { guardTap } = useTouchHover()
   const { user } = useAuth()
   const navigate = useNavigate()
   const waterHeroImage = '/images/water/water-hero.png'
@@ -192,7 +192,7 @@ export default function WaterPage() {
             {products.map((product, index) => (
               <article
                 key={product.id}
-                className={`water-product-card ${touchHoverClass(product.id)}`}
+                className="water-product-card"
                 onClickCapture={(event) => {
                   // 모바일: 첫 탭은 카드 포커스 효과만, 두 번째 탭에 상세로 이동 (카트 버튼은 예외)
                   if (event.target.closest('a')) guardTap(product.id)(event)

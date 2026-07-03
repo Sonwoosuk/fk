@@ -10,7 +10,9 @@
   flex-direction: column;
   background-color: var(--black);
   width: 100%;
-  height: calc(100vh - 56px); /* Header is 56px, hero fills exactly the rest of 100vh */
+  height: calc(100vh - 56px);
+  /* 모바일 주소창이 나타나고 사라져도 높이가 출렁이지 않도록 고정 뷰포트 단위 사용 */
+  height: calc(100svh - 56px); /* Header is 56px, hero fills exactly the rest of 100vh */
   box-sizing: border-box;
 }
 

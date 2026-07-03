@@ -15,7 +15,7 @@ export default function ForestPage() {
   const { hero: mainHero } = mainData
   const { hero, collection, products, process } = forestData
   const { addItem } = useCart()
-  const { guardTap, touchHoverClass } = useTouchHover()
+  const { guardTap } = useTouchHover()
   const { user } = useAuth()
   const navigate = useNavigate()
   const [activeCategory, setActiveCategory] = useState('earrings')
@@ -186,7 +186,7 @@ export default function ForestPage() {
             {products.map((product, index) => (
               <article
                 key={product.id}
-                className={`forest-product-card ${touchHoverClass(product.id)}`}
+                className="forest-product-card"
                 onClickCapture={(event) => {
                   // 모바일: 첫 탭은 카드 포커스 효과만, 두 번째 탭에 상세로 이동 (카트 버튼은 예외)
                   if (event.target.closest('a')) guardTap(product.id)(event)
