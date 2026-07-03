@@ -42,7 +42,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: calc(-1 * var(--pull-video-height));
+  /* 포엠 영역 높이(약 144px)까지만 위로 당겨서, 그 아래 서브내비/콘텐츠가 영상 패널에 겹치지 않게 함 */
+  margin-top: calc(-1 * min(var(--pull-video-height), 144px));
   margin-bottom: 24px;
   position: relative;
   width: 100%;
@@ -71,6 +72,13 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  transition: opacity 0.25s ease;
+}
+
+/* 영상 패널이 내려와 있는 동안에는 시가 반쯤 잘려 보이지 않도록 숨김 */
+.collection-hero-top--pulling .hero-poem-container,
+.collection-hero-top--video-open .hero-poem-container {
+  opacity: 0;
 }
 
 .brush-stroke-poem {
