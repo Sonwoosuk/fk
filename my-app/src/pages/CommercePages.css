@@ -299,3 +299,36 @@
   font-weight: 600;
   margin: 0;
 }
+
+.checkout-success-panel {
+  text-align: center;
+}
+
+.checkout-success-desc {
+  margin: 14px 0 6px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(18, 19, 19, 0.72);
+}
+
+.checkout-success-id {
+  margin: 0 0 6px;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: rgba(18, 19, 19, 0.5);
+  word-break: break-all;
+}
+
+.checkout-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.checkout-success-actions .commerce-primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}

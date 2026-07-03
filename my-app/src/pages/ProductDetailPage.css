@@ -222,6 +222,17 @@
   opacity: 0.84;
 }
 
+.product-detail-buy-btn {
+  margin-top: 10px;
+  background-color: var(--offwhite);
+  color: var(--black);
+}
+
+.product-detail-buy-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .product-detail-back {
   display: inline-block;
   margin-top: 22px;

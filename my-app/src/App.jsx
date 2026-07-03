@@ -17,6 +17,7 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import MyPage from './pages/MyPage'
+import SuccessPage from './pages/SuccessPage'
 import './App.css'
 
 function DesktopSidePanel({ pathname }) {
@@ -202,7 +203,8 @@ function AppLayout() {
     '/light': '/images/light/light-page-bg.png',
     '/login': '/images/bg-waves.jpg',
     '/signup': '/images/bg-waves.jpg',
-    '/cart': '/images/bg-waves.jpg'
+    '/cart': '/images/bg-waves.jpg',
+    '/success': '/images/bg-waves.jpg'
   }
 
   const appBackgroundImage = appBackgrounds[location.pathname] ?? '/images/bg-waves.jpg'
@@ -284,6 +286,7 @@ function AppLayout() {
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/mypage" element={<MyPage />} />
+                <Route path="/success" element={<SuccessPage />} />
               </Routes>
             </div>
             <Footer />

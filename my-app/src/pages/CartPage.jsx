@@ -3,11 +3,26 @@ import { Link } from 'react-router-dom'
 import ProductOptionsModal from '../components/ProductOptionsModal'
 import { useCart } from '../context/CartContext'
 import { buildCartItem, findMetalByLabel, formatWon, toPriceNumber } from '../lib/productOptions'
+import { startCheckout } from '../lib/checkout'
 import './CommercePages.css'
 
 export default function CartPage() {
   const { items, removeItem, setQuantity, clearCart, changeItemOptions, total, loading } = useCart()
   const [editingItem, setEditingItem] = useState(null)
+  const [checkingOut, setCheckingOut] = useState(false)
+  const [checkoutError, setCheckoutError] = useState('')
+
+  const handleCheckout = async () => {
+    setCheckoutError('')
+    setCheckingOut(true)
+
+    try {
+      await startCheckout(items.map((item) => item.name))
+    } catch (error) {
+      setCheckoutError(error.message)
+      setCheckingOut(false)
+    }
+  }
 
   const editingMetal = editingItem ? findMetalByLabel(editingItem.selectedMetal) : null
   const editingBasePrice = editingItem
@@ -91,7 +106,15 @@ export default function CartPage() {
                 <span>Total</span>
                 <strong>{formatWon(total)}</strong>
               </div>
-              <button type="button" className="commerce-primary-btn">Checkout</button>
+              {checkoutError && <p className="auth-error">{checkoutError}</p>}
+              <button
+                type="button"
+                className="commerce-primary-btn"
+                disabled={checkingOut}
+                onClick={handleCheckout}
+              >
+                {checkingOut ? '결제 페이지로 이동 중…' : 'Checkout'}
+              </button>
               <button type="button" className="commerce-text-btn" onClick={clearCart}>Clear Cart</button>
             </div>
           </>

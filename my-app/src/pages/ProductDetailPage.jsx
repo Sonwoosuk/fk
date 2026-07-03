@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
 import { metalOptions, toPriceNumber, formatWon } from '../lib/productOptions'
+import { startCheckout } from '../lib/checkout'
 import waterData from '../data/water.json'
 import earthData from '../data/earth.json'
 import forestData from '../data/forest.json'
@@ -23,6 +24,8 @@ export default function ProductDetailPage() {
   const navigate = useNavigate()
   const [added, setAdded] = useState(false)
   const [openSection, setOpenSection] = useState(null)
+  const [checkingOut, setCheckingOut] = useState(false)
+  const [checkoutError, setCheckoutError] = useState('')
 
   const collection = collections[collectionId]
   const product = collection?.products.find((item) => item.id === productId)
@@ -65,6 +68,18 @@ export default function ProductDetailPage() {
     })
     setAdded(true)
     setTimeout(() => setAdded(false), 1800)
+  }
+
+  const handleBuyNow = async () => {
+    setCheckoutError('')
+    setCheckingOut(true)
+
+    try {
+      await startCheckout([product.name])
+    } catch (error) {
+      setCheckoutError(error.message)
+      setCheckingOut(false)
+    }
   }
 
   return (
@@ -171,6 +186,16 @@ export default function ProductDetailPage() {
 
         <button type="button" className="product-detail-cart-btn" onClick={handleAddToCart}>
           {added ? '카트에 담았습니다' : '카트 담기'}
+        </button>
+
+        {checkoutError && <p className="auth-error">{checkoutError}</p>}
+        <button
+          type="button"
+          className="product-detail-cart-btn product-detail-buy-btn"
+          disabled={checkingOut}
+          onClick={handleBuyNow}
+        >
+          {checkingOut ? '결제 페이지로 이동 중…' : '결제하기'}
         </button>
 
         <Link to={collection.path} className="product-detail-back">
