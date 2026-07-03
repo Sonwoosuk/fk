@@ -18,6 +18,7 @@ export default function CollectionHeroTop({ poemLines = [], activeId = 'brand' }
   const dragStartRef = useRef(0)
   const pullDistanceRef = useRef(0)
   const isDraggingRef = useRef(false)
+  const hasMovedRef = useRef(false)
   const autoCloseRef = useRef(null)
   const [pullDistance, setPullDistance] = useState(0)
   const [isVideoOpen, setIsVideoOpen] = useState(false)
@@ -75,22 +76,8 @@ export default function CollectionHeroTop({ poemLines = [], activeId = 'brand' }
   }
 
   const handlePointerDown = (event) => {
-    // 터치 기기(아이폰 등): 탭으로 열고, 몇 초 뒤 자동으로 되감김
-    const shouldTapToggle =
-      event.pointerType === 'touch' ||
-      window.matchMedia('(hover: none)').matches ||
-      window.matchMedia('(max-width: 768px)').matches
-
-    if (shouldTapToggle) {
-      if (isVideoOpen) {
-        closeAndPrepareNext()
-      } else {
-        openVideo()
-      }
-      return
-    }
-
     isDraggingRef.current = true
+    hasMovedRef.current = false
     dragStartRef.current = event.clientY
     pullDistanceRef.current = isVideoOpen ? maxPull : 0
     playPreloadedVideo()
@@ -101,6 +88,11 @@ export default function CollectionHeroTop({ poemLines = [], activeId = 'brand' }
     if (!isDraggingRef.current) return
 
     const distance = Math.max(0, Math.min(maxPull, event.clientY - dragStartRef.current))
+
+    if (Math.abs(event.clientY - dragStartRef.current) > 6) {
+      hasMovedRef.current = true
+    }
+
     pullDistanceRef.current = distance
     setIsVideoOpen(false)
     setPullDistance(distance)
@@ -114,8 +106,23 @@ export default function CollectionHeroTop({ poemLines = [], activeId = 'brand' }
     if (!isDraggingRef.current) return
 
     isDraggingRef.current = false
-    event.currentTarget.releasePointerCapture(event.pointerId)
+    try {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    } catch {
+      // 포인터 캡처가 이미 해제된 경우 무시
+    }
 
+    // 움직임 없는 짧은 탭: 열기/닫기 토글 (열리면 몇 초 뒤 자동 되감김)
+    if (!hasMovedRef.current) {
+      if (isVideoOpen) {
+        closeAndPrepareNext()
+      } else {
+        openVideo()
+      }
+      return
+    }
+
+    // 드래그였다면 손을 떼는 순간 위로 되감기
     closeAndPrepareNext()
   }
 

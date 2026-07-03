@@ -48,7 +48,7 @@
   width: 100%;
 }
 
-/* 터치 기기: 탭으로 열리므로 열림/되감김을 고무줄처럼 부드럽게 */
+/* 터치 기기: 열림/되감김을 고무줄처럼 부드럽게 */
 @media (hover: none) {
   .pull-video-panel {
     transition: height 0.55s cubic-bezier(0.22, 1, 0.36, 1);
@@ -57,6 +57,12 @@
   .hero-poem-row {
     transition: margin-top 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   }
+}
+
+/* 드래그 중에는 손가락을 1:1로 따라가도록 전환 효과 제거 (놓으면 위 transition으로 되감김) */
+.collection-hero-top--pulling:not(.collection-hero-top--video-open) .pull-video-panel,
+.collection-hero-top--pulling:not(.collection-hero-top--video-open) .hero-poem-row {
+  transition: none;
 }
 
 .hero-poem-container {
