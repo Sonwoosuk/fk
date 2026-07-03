@@ -1,0 +1,607 @@
+/* ==========================================================================
+   3-COLUMN DESKTOP LAYOUT (App Container)
+   ========================================================================== */
+.app-container {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--beige); /* Sandy beige background below the first fold */
+  color: var(--beige);
+  position: relative;
+}
+
+/* Pseudo-element to limit background waves to the first 100vh fold */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* Dark mask over wave background, completely opaque to block the beige background underneath */
+  background: linear-gradient(var(--app-bg-overlay, rgba(18, 19, 19, 0.65)), var(--app-bg-overlay, rgba(18, 19, 19, 0.65))), var(--app-bg-image) no-repeat center top;
+  background-size: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-left {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  background-color: transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.sidebar-left-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.left-search {
+  width: 100%;
+  max-width: 288px;
+  margin-top: 74px;
+}
+
+/* Left Carousel */
+.left-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 28px;
+  margin-bottom: 20px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.carousel-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1.33;
+  max-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1e1e;
+  opacity: 0;
+  transform: scale(1.03); /* 전환 시 약간 커진 크기에서 시작 */
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  transform: scale(1); /* 활성화될 때 정사이즈로 축소되며 선명해짐 */
+  pointer-events: auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  color: rgba(215, 206, 191, 0.55);
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.carousel-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.carousel-btn:hover {
+  color: var(--beige);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prev-btn {
+  left: -36px;
+}
+
+.next-btn {
+  right: -36px;
+}
+
+/* Left Logo */
+.left-brand-logo {
+  text-align: center;
+  width: 100%;
+}
+
+.left-brand-logo-img {
+  max-width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.left-brand-logo .brand-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--offwhite);
+  margin-bottom: 4px;
+}
+
+/* Organic SVG Brush Stroke Line */
+.brush-line {
+  width: 140px;
+  height: 8px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  margin: 6px auto 10px;
+}
+
+.left-brand-logo .brand-subtitle {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--beige);
+}
+
+
+/* ===== CENTER MOBILE APP VIEWPORT ===== */
+.mobile-viewport {
+  width: 480px;
+  min-width: 480px;
+  background-color: transparent;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+/* Webkit Scrollbar styling for central mobile viewport */
+.mobile-viewport::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-viewport::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.mobile-viewport-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.route-fade {
+  animation: routeFadeIn 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes routeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== RIGHT SIDEBAR (Login Form) ===== */
+.sidebar-right {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.sidebar-right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+/* 로그인/카트 패널 아래 회전 텍스트 뱃지 */
+.sidebar-circular-badge {
+  margin-top: 56px;
+}
+
+.sidebar-circular-badge .circular-text {
+  width: 120px;
+  height: 120px;
+  color: var(--beige);
+  opacity: 0.8;
+}
+
+.sidebar-circular-badge .circular-text span {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.login-title {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--offwhite);
+  margin-bottom: 32px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* Pill-shaped solid beige inputs */
+.login-input {
+  width: 100%;
+  height: 46px;
+  border-radius: 9999px;
+  border: none;
+  background-color: var(--beige);
+  color: var(--black);
+  padding: 0 24px;
+  font-family: var(--font-kr);
+  font-size: 14px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.login-input::placeholder {
+  color: rgba(18, 19, 19, 0.4);
+}
+
+/* Secondary text links in the right panel (Create Account, My Page, Cart) */
+.desktop-text-link {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(215, 206, 191, 0.72);
+  margin-top: 4px;
+  transition: color 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(215, 206, 191, 0.35);
+  display: inline-block;
+}
+
+.desktop-text-link:hover {
+  color: var(--beige);
+}
+
+/* Organic brush line underneath login form */
+.brush-line-center {
+  width: 200px;
+  height: 8px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  margin: 18px auto 0;
+}
+
+.product-coming-soon {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-kr);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(18, 19, 19, 0.58);
+  text-align: center;
+}
+
+.product-cart-button {
+  width: 100%;
+  min-height: 34px;
+  margin-top: 14px;
+  border: 1px solid rgba(18, 19, 19, 0.22);
+  color: var(--black);
+  font-family: var(--font-kr);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.product-cart-button:hover {
+  background-color: var(--black);
+  color: var(--offwhite);
+}
+
+.desktop-panel-kicker {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(215, 206, 191, 0.72);
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.desktop-cart-box {
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+}
+
+.desktop-cart-title {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 400;
+  color: var(--offwhite);
+  line-height: 1;
+  margin: 0 0 30px;
+}
+
+.desktop-cart-empty {
+  font-family: var(--font-kr);
+  font-size: 13px;
+  color: rgba(215, 206, 191, 0.78);
+  margin: 26px 0 0;
+}
+
+.desktop-cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-height: 46vh;
+  overflow: auto;
+  padding-right: 4px;
+  text-align: left;
+}
+
+.desktop-cart-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.desktop-cart-thumb {
+  width: 72px;
+  aspect-ratio: 1 / 1.3;
+  background-color: #1a1e1e;
+  background-size: cover;
+  background-position: center;
+}
+
+.desktop-cart-item h3 {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--offwhite);
+  margin: 0 0 6px;
+}
+
+.desktop-cart-item p,
+.desktop-cart-item button {
+  font-family: var(--font-serif);
+  font-size: 11.5px;
+  color: rgba(215, 206, 191, 0.78);
+  margin: 0;
+}
+
+.desktop-cart-item .desktop-cart-options {
+  font-size: 10.5px;
+  color: rgba(215, 206, 191, 0.6);
+  margin-bottom: 3px;
+}
+
+.desktop-cart-item button {
+  margin-top: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.desktop-cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(215, 206, 191, 0.22);
+  margin-top: 24px;
+  padding-top: 18px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--beige);
+}
+
+/* Logged-in account view in the right panel */
+.desktop-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.desktop-account-email {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: rgba(215, 206, 191, 0.85);
+  margin: 0 0 22px;
+}
+
+.desktop-account-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.desktop-account-links a {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(215, 206, 191, 0.72);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(215, 206, 191, 0.35);
+  transition: color 0.2s;
+}
+
+.desktop-account-links a:hover {
+  color: var(--beige);
+}
+
+.desktop-login-btn {
+  width: 100%;
+  height: 42px;
+  border-radius: 9999px;
+  background-color: var(--beige);
+  color: var(--black);
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 4px 0 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.desktop-login-btn:hover {
+  opacity: 0.88;
+}
+
+.desktop-login-btn:disabled,
+.desktop-google-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.desktop-google-btn {
+  width: 100%;
+  height: 42px;
+  border: 1px solid rgba(215, 206, 191, 0.55);
+  border-radius: 9999px;
+  color: var(--beige);
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.desktop-google-btn:hover {
+  background-color: var(--beige);
+  color: var(--black);
+}
+
+.desktop-account .desktop-login-btn {
+  max-width: 220px;
+}
+
+.desktop-login-error {
+  font-family: var(--font-kr);
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 205, 190, 0.92);
+  margin: -4px 0 4px;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Mobile Adaptations)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  .sidebar-left,
+  .sidebar-right {
+    display: none !important;
+  }
+  
+  .mobile-viewport {
+    width: 100% !important;
+    min-width: 100% !important;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+/* Product detail link (collection page cards → detail page) */
+.product-detail-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.product-detail-link:hover {
+  opacity: 0.85;
+}

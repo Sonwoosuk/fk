@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "image": "/images/light/light-hero.png",
+    "title": "Light",
+    "subtitle": "Formed by nature, worn by you."
+  },
+  "collection": {
+    "mainImage": "/images/light/light-section-1.png",
+    "secondaryImage": "/images/light/light-section-2.png",
+    "title": "Light Collection",
+    "bodyLines": [
+      "Inspired by the movement of light,",
+      "each piece reflects the quiet rhythm",
+      "of shining nature."
+    ]
+  },
+  "products": [
+    {
+      "id": "halo-ring",
+      "name": "Halo Ring",
+      "description": "",
+      "price": "₩329,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/light/product-1.png"
+    },
+    {
+      "id": "prism-ring",
+      "name": "Prism Ring",
+      "description": "",
+      "price": "₩349,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/light/product-2.png"
+    },
+    {
+      "id": "ray-ring",
+      "name": "Ray Ring",
+      "description": "",
+      "price": "₩369,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/light/product-3.png"
+    },
+    {
+      "id": "lumen-ring",
+      "name": "Lumen Ring",
+      "description": "",
+      "price": "₩389,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/light/product-4.png"
+    },
+    {
+      "id": "gleam-ring",
+      "name": "Gleam Ring",
+      "description": "",
+      "price": "₩419,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/light/product-5.png"
+    },
+    {
+      "id": "radiant-ring",
+      "name": "Radiant Ring",
+      "description": "",
+      "price": "₩459,000",
+      "material": "P950 Platinum",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/light/product-6.png"
+    }
+  ],
+  "process": [
+    {
+      "id": "process",
+      "image": "/images/light/light-process.png",
+      "alt": "Light collection making process"
+    }
+  ],
+  "closing": {
+    "madeBy": "Made by GYEOL",
+    "quote": "Every texture leaves a trace."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "collection": {
+    "mainImage": "/images/water/water-collection.png",
+    "storyImage": "/images/water/water-story-small.png",
+    "title": "Water Collection",
+    "bodyLines": [
+      "Inspired by the movement of water,",
+      "each piece reflects the quiet rhythm of",
+      "flowing nature."
+    ]
+  },
+  "products": [
+    {
+      "id": "flow-ring",
+      "name": "Flow Ring",
+      "description": "Inspired by the movement of water.",
+      "price": "₩121,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/water/product-1.png"
+    },
+    {
+      "id": "tide-ring",
+      "name": "Tide Ring",
+      "description": "Formed by the ebb and flow.",
+      "price": "₩115,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/water/product-2.png"
+    },
+    {
+      "id": "ripples",
+      "name": "Ripples",
+      "description": "Inspired by endless waves.",
+      "price": "₩117,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/water/product-3.png"
+    },
+    {
+      "id": "wave",
+      "name": "Wave",
+      "description": "Capturing the rhythm of the sea.",
+      "price": "₩102,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/water/product-4.png"
+    },
+    {
+      "id": "current-ring",
+      "name": "Current Ring",
+      "description": "Guided by the quiet flow of water.",
+      "price": "₩121,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/water/product-5.png"
+    },
+    {
+      "id": "shore-ring",
+      "name": "Shore Ring",
+      "description": "Where the sea gently meets the shore.",
+      "price": "₩123,000",
+      "material": "925 Sterling Silver",
+      "size": "7 · 9 · 11 · 13",
+      "image": "/images/water/product-6.png"
+    }
+  ],
+  "process": [
+    {
+      "id": "process",
+      "image": "/images/water/water-process.png",
+      "alt": "Water collection making process"
+    }
+  ],
+  "closing": {
+    "madeBy": "Made by GYEOL",
+    "quote": "Every texture leaves a trace."
+  }
+}

@@ -1,0 +1,275 @@
+.side-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 19, 19, 0.55);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.side-overlay--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 380px;
+  background: transparent; /* Transparent parent container */
+  z-index: 1200;
+  transform: translateX(calc(-100% - 48px)); /* Hide tags off-screen when menu is closed */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: row;
+}
+
+.side-menu--open {
+  transform: translateX(0);
+}
+
+.side-menu-main {
+  flex: 1;
+  padding: 40px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: #ffffff; /* Main panel background */
+  border-right: 1px solid #e8e5e1; /* Right border for main panel */
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15); /* Main panel shadow */
+  position: relative;
+  z-index: 5;
+}
+
+/* Logo Brand Area */
+.side-menu-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.side-menu-logo-img {
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* Convert black image to the root darkest color --black (#121313) */
+  filter: invert(1) brightness(7.5%);
+}
+
+.side-menu-brush-line {
+  width: 160px;
+  height: 6px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  margin: 8px auto 10px;
+  /* Convert black brush line to the root darkest color --black (#121313) */
+  filter: invert(1) brightness(7.5%);
+}
+
+.side-menu-tagline {
+  font-family: var(--font-serif);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #888888;
+}
+
+/* Centered Navigation Links with line separators */
+.side-menu-nav {
+  border-top: 1px solid #e8e5e1;
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.side-menu-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.side-menu-nav-item {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--black);
+  padding: 16px 0;
+  border-bottom: 1px solid #e8e5e1;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.side-menu-nav-item:hover {
+  opacity: 0.6;
+}
+
+.side-menu-flowing {
+  width: 100%;
+  height: 330px;
+  margin: 0 0 24px;
+  border-top: 1px solid #e8e5e1;
+  border-bottom: 1px solid #e8e5e1;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.side-menu-flowing .flowing-menu__item-link {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.side-menu-flowing .flowing-marquee span {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.side-menu-flowing .flowing-marquee__img {
+  width: 104px;
+  height: 38px;
+}
+
+/* Social icons in a row */
+.side-menu-social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.side-menu-social-btn {
+  color: #555555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.side-menu-social-btn:hover {
+  color: var(--black);
+  transform: translateY(-1px);
+}
+
+/* Mini footer inside sidebar */
+.side-menu-footer {
+  margin-top: auto; /* Pushes to bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid #e8e5e1;
+  padding-top: 20px;
+}
+
+.side-menu-footer-columns {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 12px;
+}
+
+.side-menu-address {
+  font-family: var(--font-serif);
+  font-size: 12px; /* Increased from 11px */
+  color: #555555; /* Darker for better contrast */
+  line-height: 1.6;
+}
+
+.side-menu-footer-title {
+  font-family: var(--font-serif);
+  font-size: 12px; /* Increased from 11px */
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.side-menu-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.side-menu-footer-links a {
+  font-family: var(--font-serif);
+  font-size: 12px; /* Increased from 11px */
+  color: #555555; /* Darker for contrast */
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 400; /* Regular weight */
+}
+
+.side-menu-footer-links a:hover {
+  color: var(--black);
+}
+
+.side-menu-copyright {
+  font-family: var(--font-serif);
+  font-size: 11px; /* Increased from 10px */
+  color: #777777; /* Darker for contrast */
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+/* Vertical Separate Actions Tabs on the right */
+.side-menu-tag {
+  position: absolute;
+  left: calc(100% - 1px); /* Overlap main panel border to merge seamlessly */
+  width: 48px;
+  background: #ffffff;
+  border-top: 1px solid #e8e5e1;
+  border-right: 1px solid #e8e5e1;
+  border-bottom: 1px solid #e8e5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  cursor: pointer;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.2s;
+}
+
+.side-menu-tag span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--black);
+  letter-spacing: 0.05em;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.side-menu-tag:hover {
+  width: 58px; /* Expand horizontally to the right on hover, staying attached to menu */
+  background-color: #fcfbfa;
+}
+
+.side-menu-tag:hover span {
+  opacity: 0.6;
+}
+
+/* Individual vertical placements to touch contiguously */
+.side-menu-tag-login {
+  top: 80px;
+  height: 80px;
+}
+
+.side-menu-tag-cart {
+  top: 159px; /* Touches bottom border of Login tag (80px + 80px - 1px) */
+  height: 70px;
+}

@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "backgroundImage": "/images/hero/hero-main.jpg",
+    "poemLines": [
+      "파도가 지나간 자리 -",
+      "돌의 침식 ,",
+      "손 끝에 닿은 결 ."
+    ],
+    "eventLabel": "event",
+    "titleEn": "GYEOL",
+    "subtitle": "Nature Inspired Jewelry"
+  },
+  "collage": [
+    { "id": "collage-01", "image": "/images/collage/collage-01.jpg", "alt": "" },
+    { "id": "collage-02", "image": "/images/collage/collage-02.jpg", "alt": "" },
+    { "id": "collage-03", "image": "/images/collage/collage-03.jpg", "alt": "" },
+    { "id": "collage-04", "image": "/images/collage/collage-04.jpg", "alt": "" },
+    { "id": "collage-05", "image": "/images/collage/collage-05.jpg", "alt": "" },
+    { "id": "collage-06", "image": "/images/collage/collage-06.jpg", "alt": "" }
+  ],
+  "collageText": {
+    "heading": "Shaped by Nature. Worn by Time.",
+    "bodyLines": [
+      "자연이 남긴 결을 담다.",
+      "시간이 스며든 형태.",
+      "가장 아름다운 형태는 자연에서 시작됩니다.",
+      "시간이 만든 아름다움."
+    ]
+  },
+  "collageSubText": [
+    "시간이 만들고,",
+    "손이 완성하다."
+  ],
+  "intro": {
+    "headingKo": "자연의 결을 닮은\n핸드 메이드 주얼리",
+    "bodyKo": "자연이 만들어낸 다양한 결에서 영감을 받아\n각각의 질감을 하나의 컬렉션으로 담아냈습니다."
+  },
+  "quote": "Every texture leaves a trace."
+}

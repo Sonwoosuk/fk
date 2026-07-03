@@ -1,0 +1,29 @@
+{
+  "logo": {
+    "text": "GYEOL",
+    "image": "/images/logo/logo.png"
+  },
+  "mainNav": [
+    { "id": "brand", "label": "Brand", "path": "/brand" },
+    { "id": "water", "label": "Water", "path": "/water" },
+    { "id": "earth", "label": "Earth", "path": "/earth" },
+    { "id": "forest", "label": "Forest", "path": "/forest" },
+    { "id": "light", "label": "Light", "path": "/light" }
+  ],
+  "subNav": [
+    { "id": "rings", "label": "Rings", "path": "/rings" },
+    { "id": "necklaces", "label": "Necklaces", "path": "/necklaces" },
+    { "id": "earrings", "label": "Earrings", "path": "/earrings" }
+  ],
+  "sideNav": [
+    { "id": "brand", "label": "Brand", "path": "/brand" },
+    { "id": "water", "label": "Water", "path": "/water" },
+    { "id": "earth", "label": "Earth", "path": "/earth" },
+    { "id": "forest", "label": "Forest", "path": "/forest" },
+    { "id": "light", "label": "Light", "path": "/light" }
+  ],
+  "actions": {
+    "login": "",
+    "cart": ""
+  }
+}

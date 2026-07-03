@@ -1,0 +1,340 @@
+.earth-page {
+  background-color: var(--black);
+}
+
+.earth-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background-color: var(--black);
+  box-sizing: border-box;
+}
+
+.earth-hero .collection-hero-top {
+  min-height: 240px;
+  flex: 0 0 auto;
+}
+
+.earth-hero-main {
+  width: 100%;
+  flex: 1;
+  background-color: var(--black);
+  overflow: hidden;
+}
+
+.earth-hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background-size: cover;
+  background-position: center 44%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 28px 78px;
+}
+
+.earth-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(18, 19, 19, 0.46) 0%, rgba(18, 19, 19, 0.14) 44%, rgba(18, 19, 19, 0.54) 100%),
+    rgba(76, 54, 33, 0.28);
+  z-index: 1;
+}
+
+.earth-title-block {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  min-width: 245px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--offwhite);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  margin-right: auto;
+}
+
+.earth-title-block h1 {
+  font-family: var(--font-display);
+  font-size: 74px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.08;
+  margin: 0 0 6px;
+  padding-bottom: 0.08em;
+  width: 100%;
+  text-align: center;
+  overflow: visible;
+  justify-content: center;
+}
+
+.earth-title-line {
+  width: 245px;
+  height: 10px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  flex: 0 0 auto;
+  filter: sepia(12%) saturate(80%) brightness(108%);
+  opacity: 0.88;
+}
+
+.earth-title-block p {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  margin: 9px 0 0;
+  color: rgba(215, 206, 191, 0.92);
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.earth-collection-visual,
+.earth-collection-intro {
+  background-color: var(--black);
+}
+
+.earth-collection-main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.86) saturate(0.82);
+}
+
+.earth-story-panel {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background-color: var(--teal);
+  min-height: 330px;
+  position: relative;
+  padding-left: 22px;
+  overflow: hidden;
+}
+
+.earth-story-vertical {
+  padding: 28px 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.earth-story-vertical-image {
+  width: 100%;
+  height: 100%;
+  min-height: 346px;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.82) saturate(0.82);
+}
+
+.earth-story-content {
+  padding: 54px 28px 34px 0;
+  color: var(--beige);
+  position: relative;
+  z-index: 2;
+}
+
+.earth-story-logo {
+  width: 118px;
+  height: auto;
+  filter: sepia(12%) saturate(80%) brightness(96%);
+  margin: 0 auto 38px;
+}
+
+.earth-story-content h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--offwhite);
+  width: max-content;
+  max-width: 260px;
+  margin: 0 0 30px -66px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42);
+}
+
+.earth-story-small-image {
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  background-color: #1a1e1e;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 16px;
+}
+
+.earth-story-copy p {
+  font-family: var(--font-serif);
+  font-size: 10.8px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(215, 206, 191, 0.88);
+  margin: 0 0 2px;
+  word-break: normal;
+  overflow-wrap: normal;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.earth-products {
+  background-color: var(--offwhite);
+  color: var(--black);
+  padding: 68px 32px 76px;
+}
+
+.earth-section-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 52px;
+  justify-content: center;
+  overflow: visible;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.earth-product-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  margin-bottom: 44px;
+  text-align: center;
+}
+
+.earth-product-tabs a {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(18, 19, 19, 0.56);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.earth-product-tabs a.active {
+  color: var(--black);
+}
+
+.earth-product-tabs a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 64px;
+  height: 7px;
+  transform: translateX(-50%);
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  filter: invert(1) brightness(7.5%);
+  opacity: 0.75;
+}
+
+.earth-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 38px;
+}
+
+.earth-product-card {
+  min-width: 0;
+  transition: filter 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* 호버한 카드만 포커스: 나머지 카드는 블러 + 축소 */
+.earth-product-grid:has(.earth-product-card:hover) .earth-product-card:not(:hover) {
+  filter: blur(4px);
+  transform: scale(0.98);
+  opacity: 0.7;
+}
+
+.earth-product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1.42;
+  background-color: var(--beige);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 14px;
+}
+
+.earth-product-copy h3 {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.earth-product-copy p,
+.earth-product-copy dt,
+.earth-product-copy dd {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: rgba(18, 19, 19, 0.78);
+  font-weight: 400;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.earth-product-copy p {
+  margin: 0 0 8px;
+}
+
+.earth-product-copy dl {
+  margin: 0;
+}
+
+.earth-product-copy div {
+  margin: 0 0 3px;
+}
+
+.earth-product-copy dt {
+  display: block;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.earth-product-copy dd {
+  margin: 0;
+}
+
+.earth-process {
+  background-color: var(--black);
+}
+
+.earth-process-image {
+  width: 100%;
+  aspect-ratio: 800 / 1654;
+  background-color: #1a1e1e;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.82) saturate(0.82);
+}
+
+@media screen and (max-width: 520px) {
+  .earth-title-block h1 {
+    font-size: 68px;
+  }
+
+  .earth-title-line {
+    width: 220px;
+  }
+
+  .earth-products {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .earth-product-grid {
+    column-gap: 22px;
+  }
+}

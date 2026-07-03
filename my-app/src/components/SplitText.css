@@ -1,0 +1,39 @@
+.split-parent {
+  overflow: visible;
+  padding-block: 0.08em;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.split-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.split-unit {
+  display: inline-block;
+  opacity: var(--split-from-opacity);
+  transform: translate3d(var(--split-from-x), var(--split-from-y), 0) scale(var(--split-from-scale));
+  transition:
+    opacity var(--split-duration) cubic-bezier(0.22, 1, 0.36, 1),
+    transform var(--split-duration) cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--split-index) * var(--split-delay));
+  will-change: opacity, transform;
+}
+
+.split-parent--visible .split-unit {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.split-space {
+  display: inline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-unit {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

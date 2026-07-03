@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "image": "/images/forest/forest-hero.png",
+    "title": "Forest",
+    "subtitle": "Formed by nature, worn by you."
+  },
+  "collection": {
+    "mainImage": "/images/forest/forest-cross-1.png",
+    "secondaryImage": "/images/forest/forest-cross-2.png",
+    "title": "Forest Collection",
+    "bodyLines": [
+      "Inspired by the movement of forest,",
+      "each piece reflects the quiet rhythm of",
+      "living nature."
+    ]
+  },
+  "products": [
+    {
+      "id": "tree-ring-earrings",
+      "name": "Tree Ring Earrings",
+      "description": "",
+      "price": "₩129,000",
+      "material": "925 Sterling Silver",
+      "type": "Drop Earrings",
+      "image": "/images/forest/product-1.png"
+    },
+    {
+      "id": "moss-earrings",
+      "name": "Moss Earrings",
+      "description": "",
+      "price": "₩139,000",
+      "material": "925 Sterling Silver",
+      "type": "Drop Earrings",
+      "image": "/images/forest/product-2.png"
+    },
+    {
+      "id": "fern-earrings",
+      "name": "Fern Earrings",
+      "description": "",
+      "price": "₩149,000",
+      "material": "925 Sterling Silver",
+      "type": "Drop Earrings",
+      "image": "/images/forest/product-3.png"
+    },
+    {
+      "id": "canopy-earrings",
+      "name": "Canopy Earrings",
+      "description": "",
+      "price": "₩159,000",
+      "material": "925 Sterling Silver",
+      "type": "Drop Earrings",
+      "image": "/images/forest/product-4.png"
+    },
+    {
+      "id": "branch-earrings",
+      "name": "Branch Earrings",
+      "description": "",
+      "price": "₩169,000",
+      "material": "925 Sterling Silver",
+      "type": "Drop Earrings",
+      "image": "/images/forest/product-5.png"
+    },
+    {
+      "id": "grove-earrings",
+      "name": "Grove Earrings",
+      "description": "",
+      "price": "₩189,000",
+      "material": "925 Sterling Silver",
+      "type": "Drop Earrings",
+      "image": "/images/forest/product-6.png"
+    }
+  ],
+  "process": [
+    {
+      "id": "process",
+      "image": "/images/forest/forest-process.png",
+      "alt": "Forest collection making process"
+    }
+  ],
+  "closing": {
+    "madeBy": "Made by GYEOL",
+    "quote": "Every texture leaves a trace."
+  }
+}

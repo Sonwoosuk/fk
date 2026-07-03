@@ -1,0 +1,40 @@
+{
+  "collections": [
+    {
+      "id": "water",
+      "name": "Water",
+      "description": "",
+      "thumbnail": "/images/collections/thumbnails/collection-water.png",
+      "background": "/images/collections/backgrounds/water-bg.png",
+      "backgroundHover": "/images/collections/backgrounds/water-bg-hover.png",
+      "color": ""
+    },
+    {
+      "id": "earth",
+      "name": "Earth",
+      "description": "",
+      "thumbnail": "/images/collections/thumbnails/collection-earth.png",
+      "background": "/images/collections/backgrounds/earth-bg.png",
+      "backgroundHover": "/images/collections/backgrounds/earth-bg-hover.png",
+      "color": ""
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "description": "",
+      "thumbnail": "/images/collections/thumbnails/collection-forest.png",
+      "background": "/images/collections/backgrounds/forest-bg.png",
+      "backgroundHover": "/images/collections/backgrounds/forest-bg-hover.png",
+      "color": ""
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "description": "",
+      "thumbnail": "/images/collections/thumbnails/collection-light.png",
+      "background": "/images/collections/backgrounds/light-bg.png",
+      "backgroundHover": "/images/collections/backgrounds/light-bg-hover.png",
+      "color": ""
+    }
+  ]
+}

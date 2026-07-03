@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "name": "GYEOL",
+    "description": "Nature Inspired Jewelry",
+    "logo": "/images/logo/logo.png"
+  },
+  "contact": {
+    "email": "",
+    "phone": "",
+    "address": {
+      "label": "Visit Our Studio",
+      "line1": "Seongsu-dong, Seongdong-gu",
+      "line2": "Seoul, South Korea"
+    },
+    "instagram": "",
+    "youtube": "",
+    "kakao": ""
+  },
+  "links": [
+    { "label": "Studio", "path": "/studio" },
+    { "label": "Collections", "path": "/collections" },
+    { "label": "Contact", "path": "/contact" }
+  ],
+  "copyright": "© 2026 GYEOL. All rights reserved."
+}

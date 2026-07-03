@@ -1,0 +1,13 @@
+{
+  "colors": {
+    "black": "#121313",
+    "teal": "#08272b",
+    "beige": "#d7cebf",
+    "offwhite": "#f4f1ed"
+  },
+  "fonts": {
+    "korean": "프리텐다드",
+    "body": "IBM Plex Serif",
+    "heading": "Playfair Display"
+  }
+}

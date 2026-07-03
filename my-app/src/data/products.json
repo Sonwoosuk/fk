@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": "",
+      "name": "",
+      "collection": "",
+      "price": "",
+      "description": "",
+      "image": "",
+      "images": [],
+      "material": "",
+      "size": "",
+      "stock": true
+    }
+  ]
+}

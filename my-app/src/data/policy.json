@@ -1,0 +1,14 @@
+{
+  "shipping": {
+    "title": "배송 안내",
+    "content": ""
+  },
+  "exchange": {
+    "title": "교환 안내",
+    "content": ""
+  },
+  "refund": {
+    "title": "환불 안내",
+    "content": ""
+  }
+}

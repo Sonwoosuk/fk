@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "image": "/images/earth/earth-hero.png",
+    "title": "Earth",
+    "subtitle": "Formed by nature, worn by you."
+  },
+  "collection": {
+    "mainImage": "/images/earth/earth-collection-wide.png",
+    "verticalImage": "/images/earth/earth-collection-vertical.png",
+    "storyImage": "/images/earth/earth-story-small.png",
+    "title": "Earth Collection",
+    "bodyLines": [
+      "Inspired by the movement of earth,",
+      "each piece reflects the quiet rhythm of stone."
+    ]
+  },
+  "products": [
+    {
+      "id": "stone-necklace",
+      "name": "Stone Necklace",
+      "description": "Inspired by the raw beauty of stone.",
+      "price": "₩124,000",
+      "material": "925 Sterling Silver",
+      "size": "50cm 45cm 40cm",
+      "image": "/images/earth/product-1.png"
+    },
+    {
+      "id": "carved-by-time",
+      "name": "Carved by time and stone.",
+      "description": "",
+      "price": "₩128,000",
+      "material": "925 Sterling Silver",
+      "size": "50cm 45cm 40cm",
+      "image": "/images/earth/product-2.png"
+    },
+    {
+      "id": "slate-necklace",
+      "name": "Slate Necklace",
+      "description": "Defined by quiet geometry.",
+      "price": "₩127,000",
+      "material": "925 Sterling Silver, Gold",
+      "size": "50cm 45cm 40cm",
+      "image": "/images/earth/product-3.png"
+    },
+    {
+      "id": "cliff-necklace",
+      "name": "Cliff Necklace",
+      "description": "Where strength meets form.",
+      "price": "₩131,000",
+      "material": "925 Sterling Silver, Rose Gold, Gold",
+      "size": "50cm 45cm 40cm",
+      "image": "/images/earth/product-4.png"
+    },
+    {
+      "id": "boulder-necklace",
+      "name": "Boulder Necklace",
+      "description": "Inspired by the enduring strength of stone.",
+      "price": "₩130,000",
+      "material": "925 Sterling Silver, Gold",
+      "size": "50cm 45cm 40cm",
+      "image": "/images/earth/product-5.png"
+    },
+    {
+      "id": "terrain-necklace",
+      "name": "Terrain Necklace",
+      "description": "Forged by fire, refined by time.",
+      "price": "₩135,000",
+      "material": "925 Sterling Silver, Rose Gold, Gold",
+      "size": "50cm 45cm 40cm",
+      "image": "/images/earth/product-6.png"
+    }
+  ],
+  "process": [
+    {
+      "id": "process",
+      "image": "/images/earth/earth-process.png",
+      "alt": "Earth collection making process"
+    }
+  ],
+  "closing": {
+    "madeBy": "Made by GYEOL",
+    "quote": "Every texture leaves a trace."
+  }
+}

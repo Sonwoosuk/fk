@@ -1,0 +1,93 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #121313;
+  --teal: #08272b;
+  --beige: #d7cebf;
+  --offwhite: #f4f1ed;
+  --font-kr: 'Pretendard', system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-kr);
+  background-color: var(--black);
+  color: var(--offwhite);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* 한국어: 단어 중간에서 줄바꿈 방지 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.cart-toast {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 320px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(18, 19, 19, 0.88);
+  border: 1px solid rgba(215, 206, 191, 0.35);
+  color: var(--offwhite);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  animation: cart-toast-in 0.25s ease-out;
+}
+
+@keyframes cart-toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

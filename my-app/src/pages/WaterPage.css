@@ -1,0 +1,356 @@
+.water-page {
+  background-color: var(--black);
+}
+
+.water-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background-color: var(--black);
+  box-sizing: border-box;
+}
+
+.water-hero .collection-hero-top {
+  min-height: 240px;
+  flex: 0 0 auto;
+}
+
+.water-hero-main {
+  width: 100%;
+  flex: 1;
+  background-color: var(--black);
+  overflow: hidden;
+}
+
+.water-hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background-size: cover;
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 28px 98px;
+}
+
+.water-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(18, 19, 19, 0.55) 0%, rgba(18, 19, 19, 0.08) 44%, rgba(18, 19, 19, 0.36) 100%),
+    rgba(8, 39, 43, 0.22);
+  z-index: 1;
+}
+
+.water-title-block {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  min-width: 245px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--offwhite);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  margin-right: auto;
+}
+
+.water-title-block h1 {
+  font-family: var(--font-display);
+  font-size: 74px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.08;
+  margin: 0 0 6px;
+  padding-bottom: 0.08em;
+  width: 100%;
+  text-align: center;
+  overflow: visible;
+  justify-content: center;
+}
+
+.water-title-line {
+  width: 245px;
+  height: 10px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  flex: 0 0 auto;
+  filter: sepia(12%) saturate(80%) brightness(108%);
+  opacity: 0.88;
+}
+
+.water-title-block p {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.32em;
+  margin: 9px 0 0;
+  color: rgba(215, 206, 191, 0.92);
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.water-collection-visual {
+  background-color: var(--black);
+}
+
+.water-collection-main-image {
+  width: 100%;
+  background-color: #1a1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.water-collection-main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.86) saturate(0.85);
+}
+
+.water-collection-main-image h2 {
+  position: absolute;
+  left: 28px;
+  bottom: 34px;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--offwhite);
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.water-collection-main-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(18, 19, 19, 0) 48%, rgba(18, 19, 19, 0.56) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.water-collection-intro {
+  background-color: var(--black);
+}
+
+.water-story-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 20px;
+  align-items: end;
+  background-color: var(--teal);
+  padding: 40px 28px 34px;
+}
+
+.water-story-copy {
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgba(215, 206, 191, 0.86);
+}
+
+.water-story-copy p {
+  font-family: var(--font-serif);
+  font-size: 10.8px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  margin: 0 0 2px;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.water-story-logo {
+  width: 118px;
+  height: auto;
+  margin-top: 34px;
+  filter: sepia(12%) saturate(80%) brightness(96%);
+}
+
+.water-story-image-wrap {
+  width: 100%;
+  align-self: center;
+}
+
+.water-story-image {
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  background-color: #1a1e1e;
+  background-size: cover;
+  background-position: center;
+}
+
+.water-products {
+  background-color: var(--offwhite);
+  color: var(--black);
+  padding: 68px 32px 76px;
+}
+
+.water-section-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin: 0 0 52px;
+  justify-content: center;
+  overflow: visible;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.water-product-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  margin-bottom: 44px;
+  text-align: center;
+}
+
+.water-product-tabs a {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(18, 19, 19, 0.56);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.water-product-tabs a.active {
+  color: var(--black);
+}
+
+.water-product-tabs a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 36px;
+  height: 7px;
+  transform: translateX(-50%);
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  filter: invert(1) brightness(7.5%);
+  opacity: 0.75;
+}
+
+.water-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 38px;
+}
+
+.water-product-card {
+  min-width: 0;
+  transition: filter 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* 호버한 카드만 포커스: 나머지 카드는 블러 + 축소 */
+.water-product-grid:has(.water-product-card:hover) .water-product-card:not(:hover) {
+  filter: blur(4px);
+  transform: scale(0.98);
+  opacity: 0.7;
+}
+
+.water-product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1.42;
+  background-color: var(--beige);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 14px;
+}
+
+.water-product-copy h3 {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.water-product-copy p,
+.water-product-copy dt,
+.water-product-copy dd {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: rgba(18, 19, 19, 0.78);
+  font-weight: 400;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.water-product-copy p {
+  margin: 0 0 8px;
+}
+
+.water-product-copy dl {
+  margin: 0;
+}
+
+.water-product-copy div {
+  margin: 0 0 3px;
+}
+
+.water-product-copy dt {
+  display: block;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.water-product-copy dd {
+  margin: 0;
+}
+
+.water-process {
+  background-color: var(--black);
+}
+
+.water-process-image {
+  width: 100%;
+  aspect-ratio: 800 / 1654;
+  background-color: #1a1e1e;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.78) saturate(0.85);
+}
+
+@media screen and (max-width: 520px) {
+  .water-title-block h1 {
+    font-size: 68px;
+  }
+
+  .water-title-line {
+    width: 220px;
+  }
+
+  .water-title-block p {
+    font-size: 12px;
+    letter-spacing: 0.26em;
+  }
+
+  .water-products {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .water-product-grid {
+    column-gap: 22px;
+  }
+}

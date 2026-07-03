@@ -1,0 +1,47 @@
+.blur-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: inherit;
+  overflow: visible;
+}
+
+.blur-text.reveal,
+.blur-text.reveal.reveal-up,
+.blur-text.reveal.reveal-scale {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.blur-text-segment {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translate3d(0, var(--blur-y), 0);
+  transition:
+    opacity var(--blur-duration) ease,
+    filter var(--blur-duration) ease,
+    transform var(--blur-duration) cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--blur-index) * var(--blur-delay));
+  will-change: opacity, filter, transform;
+}
+
+.blur-text--visible .blur-text-segment {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.blur-text-space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blur-text-segment {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}

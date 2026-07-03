@@ -1,0 +1,715 @@
+.main-page {
+  padding-top: 0; /* Sticky header takes normal space, so no top padding needed */
+}
+
+/* ===========================
+   HERO (Redesigned)
+   =========================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  width: 100%;
+  height: calc(100vh - 56px); /* Header is 56px, hero fills exactly the rest of 100vh */
+  box-sizing: border-box;
+}
+
+.hero-top-waves {
+  background-color: transparent;
+  /* Optional wave background can be added here or via container background */
+  padding: 28px 24px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Poetry row */
+.hero-poem-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+  width: 100%;
+}
+
+.hero-poem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Organic SVG brush-stroke line above poem */
+.brush-stroke-poem {
+  width: 140px;
+  height: 8px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  margin-bottom: 18px;
+}
+
+.hero-poem {
+  font-family: var(--font-kr);
+  text-align: center;
+  font-size: 13px;
+  line-height: 2.4;
+  color: var(--beige);
+  font-weight: 300;
+}
+
+.poem-line {
+  margin: 0;
+  white-space: nowrap;
+  text-align: justify;
+  text-align-last: justify;
+  width: 100%;
+}
+
+/* Scroll indicator on the right */
+.hero-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  right: 4px;
+  top: 10px;
+}
+
+.hero-scroll-indicator .scroll-text {
+  font-family: var(--font-serif);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: rgba(215, 206, 191, 0.58);
+  text-transform: lowercase;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  line-height: 1;
+}
+
+.hero-scroll-indicator .scroll-line {
+  width: 1px;
+  height: 36px;
+  background-color: rgba(215, 206, 191, 0.34);
+}
+
+/* Sub-nav horizontal menu */
+.hero-subnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  border-bottom: 1px solid rgba(215, 206, 191, 0.14);
+  padding-bottom: 12px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.hero-subnav-item {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: rgba(215, 206, 191, 0.68);
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.hero-subnav-item:hover,
+.hero-subnav-item.active {
+  color: var(--beige);
+}
+
+/* Brush stroke highlight under active/hovered link */
+.brush-stroke-active {
+  position: absolute;
+  bottom: -5px; /* Moved up to sit clearly under the text */
+  left: 50%;
+  transform: translateX(-50%) scaleX(0.7);
+  width: 100%; /* Stretch to fit the text width dynamically */
+  height: 12px; /* Taller for better visibility */
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Active or hover displays the brush line */
+.hero-subnav-item.active .brush-stroke-active,
+.hero-subnav-item:hover .brush-stroke-active {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* If the nav container is hovered, temporarily hide the active link's underline unless it is hovered itself */
+.hero-subnav:hover .hero-subnav-item.active:not(:hover) .brush-stroke-active {
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0.7);
+}
+
+.hero-main-card {
+  padding: 0;
+  background-color: var(--black);
+  width: 100%;
+  flex: 1; /* Take all remaining vertical space in the 100vh viewport */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hero-card-image {
+  width: 100%;
+  flex: 1; /* Stretch to fill hero-main-card */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--teal); /* Fallback */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 48px;
+  box-sizing: border-box;
+}
+
+.hero-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 39, 43, 0.05) 60%,
+    rgba(18, 19, 19, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+.hero-card-brand {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-card-brand-img {
+  max-width: 310px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  /* 흰색 이미지를 offwhite(#f4f1ed) 컬러로 변환하는 필터 */
+  filter: sepia(12%) saturate(80%) brightness(96%);
+}
+
+.hero-brand-title {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  color: var(--offwhite);
+  margin-bottom: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Organic brush stroke line for main logo */
+.brush-stroke-logo {
+  width: 220px;
+  height: 10px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  margin: 6px auto 10px;
+}
+
+.hero-brand-subtitle {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--beige);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ===========================
+   COLLAGE (Redesigned Asymmetric Overlapping)
+   =========================== */
+.collage-section {
+  background-color: var(--black);
+  padding: 63px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.collage-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1a1e1e;
+}
+
+/* Rings on Moss (Landscape) */
+.collage-moss {
+  width: calc(100% - 187px); /* 오른쪽 여백 187px 확보 */
+  margin-left: 0; /* 왼쪽은 딱 붙게 */
+  position: relative;
+  z-index: 1;
+}
+
+.collage-moss .collage-img {
+  width: 100%;
+  aspect-ratio: 1.6 / 1;
+}
+
+/* Ring Underwater & Text Row (Overlapping) */
+.collage-row-split {
+  position: relative;
+  width: 100%;
+  margin-top: -30px; /* 이끼 반지가 충분히 보이도록 겹침 최소화 */
+  z-index: 2;
+}
+
+.collage-underwater {
+  width: 48%;
+  margin-left: 5%;
+}
+
+.collage-underwater .collage-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  filter: brightness(0.7);
+}
+
+/* 영어 제목: 물속 반지 오른쪽 절반 위에 의도적으로 겹침 */
+.collage-heading-serif {
+  position: absolute;
+  left: 40%;
+  top: 35%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(14px, 3.5vw, 18px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--beige);
+  margin: 0;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  z-index: 10;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+/* 한글 본문: 이미지 오른쪽 밖에 위치 */
+.collage-text-block {
+  position: absolute;
+  left: 55%;
+  top: 62%;
+  transform: translateY(-50%);
+  width: 42%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.collage-body-lines {
+  font-family: var(--font-kr);
+  font-size: 11px; /* Restored back to 11px for Korean text */
+  color: var(--beige); /* 서체 색상 베이지 */
+  line-height: 2.2;
+  font-weight: 300; /* Restored back to 300 for thin Korean design */
+  opacity: 0.85; /* Restored back to 0.85 */
+}
+
+.collage-body-lines p {
+  margin: 0 0 4px;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.collage-body-lines p:last-child {
+  margin-bottom: 0;
+}
+
+/* Earrings & Hand split (Overlapping) */
+.collage-row-overlap {
+  position: relative;
+  width: 100%;
+  height: 357px; /* 오른쪽 이미지 하단과 다음 섹션 경계선을 맞춤 */
+  margin-top: -60px;
+  z-index: 3;
+}
+
+.collage-hand {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%; /* 시안 비율에 맞춰 축소 */
+  z-index: 1;
+}
+
+.collage-hand .collage-img {
+  width: 100%;
+  aspect-ratio: 1 / 1.35;
+}
+
+.collage-earrings {
+  position: absolute;
+  left: 20%; /* 오른쪽으로 이동 */
+  top: 10px; /* 아래로 내려 물속 반지 노출 */
+  width: 30%; /* 다른 이미지가 잘 보이도록 더 축소 */
+  z-index: 2;
+}
+
+.collage-earrings .collage-img {
+  width: 100%;
+  aspect-ratio: 1 / 1.35;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.collage-subtext-lines {
+  margin-top: 16px;
+  font-family: var(--font-kr);
+  font-size: 11px; /* Restored back to 11px for Korean text */
+  line-height: 2;
+  color: var(--beige); /* 서체 색상 베이지 */
+  font-weight: 300; /* Restored back to 300 */
+  opacity: 0.85; /* Restored back to 0.85 */
+}
+
+.collage-subtext-lines p {
+  margin: 0;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+/* GYEOL Logo at the bottom left */
+.collage-logo-bottom {
+  position: absolute; /* 섭션 흘로 높이에 영향 안 줌 */
+  bottom: 16px;
+  left: 8%;
+  z-index: 4;
+}
+
+.collage-logo-img {
+  max-width: 110px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.collage-logo-fallback {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  color: var(--offwhite);
+  font-weight: 400;
+}
+
+/* ===========================
+   INTRO
+=========================== */
+.intro-section {
+  background-color: var(--offwhite);
+  padding: 80px 24px 90px;
+  box-sizing: border-box;
+}
+
+.intro-content {
+  text-align: center;
+  margin-bottom: 54px;
+}
+
+.intro-heading {
+  font-family: var(--font-kr);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  margin-bottom: 36px;
+}
+
+.special-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0; /* 글자와 밑줄 간격을 가깝게 조정 */
+}
+
+.special-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px; /* 두께 증가에 맞게 약간 낮춤 */
+  width: 38px; /* 너비 미세 조정 */
+  height: 9px; /* 두께를 기존 6px에서 9px로 증가시켜 가독성 확보 */
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  /* 로고 브러시 이미지의 검은색을 루트 변수의 --black(#121313) 색상으로 변환 */
+  filter: invert(1) brightness(7.5%);
+}
+
+.intro-body {
+  font-family: var(--font-kr);
+  font-size: 11.5px;
+  color: rgba(18, 19, 19, 0.7);
+  line-height: 1.85;
+  letter-spacing: -0.01em;
+}
+
+.intro-body p {
+  justify-content: center;
+  margin: 0;
+  overflow: visible;
+}
+
+.collection-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.collection-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.collection-thumb-label {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--black);
+  text-align: center;
+}
+
+.collection-thumb-img {
+  width: 100%;
+  aspect-ratio: 1 / 3.3;
+  background-color: var(--beige);
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s;
+}
+
+.collection-thumb:hover .collection-thumb-img {
+  opacity: 0.85;
+}
+
+/* ===========================
+   COLLECTION BANNERS
+=========================== */
+.collection-banners {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-banner {
+  position: relative;
+  display: block;
+  min-height: 180px;
+  background-color: var(--black);
+  overflow: hidden;
+}
+
+.collection-banner-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.collection-banner-bg.default-bg {
+  opacity: 1;
+}
+
+.collection-banner-bg.hover-bg {
+  opacity: 0;
+}
+
+/* Hover cross-fade effect */
+.collection-banner:hover .collection-banner-bg.default-bg {
+  opacity: 0.15; /* Soften the texture image instead of fully disappearing, or 0 for clean cut */
+  opacity: 0;
+}
+
+.collection-banner:hover .collection-banner-bg.hover-bg {
+  opacity: 1;
+}
+
+.collection-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 12, 0.45);
+  transition: background 0.3s;
+  z-index: 1;
+}
+
+.collection-banner:hover .collection-banner-overlay {
+  background: rgba(8, 12, 12, 0.35);
+}
+
+.collection-banner-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 40px;
+  min-height: 180px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.collection-banner-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--offwhite);
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+/* Custom long arrow line: ──────→ (Inline SVG for perfect alignment) */
+.collection-banner-arrow-line {
+  margin-top: 14px;
+  width: 140px;
+  height: 15px;
+  color: var(--beige);
+  overflow: visible;
+}
+
+.collection-banner-arrow-line svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: left center;
+}
+
+/* Premium micro-animations on hover: stretch the vector line smoothly */
+.collection-banner:hover .collection-banner-arrow-line svg {
+  transform: scaleX(1.15);
+}
+
+/* ===========================
+   QUOTE
+=========================== */
+.quote-section {
+  background-color: var(--black);
+  padding: 110px 24px 50px;
+  text-align: center;
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--beige);
+  line-height: 1.45;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* ==========================================================================
+   PREMIUM SCROLL REVEAL Entrance Animations (Intersection Observer)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-scale {
+  transform: scale(0.975) translateY(20px);
+}
+
+/* When entering viewport, transition smoothly back to normal values */
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Specific overrides for absolutely positioned collage text elements to preserve translateY(-50%) centering */
+.collage-heading-serif.reveal-up {
+  transform: translateY(calc(-50% + 40px));
+}
+
+.collage-heading-serif.reveal-up.revealed {
+  transform: translateY(-50%) scale(1);
+}
+
+.collage-text-block.reveal-up {
+  transform: translateY(calc(-50% + 40px));
+}
+
+.collage-text-block.reveal-up.revealed {
+  transform: translateY(-50%) scale(1);
+}
+
+/* 모바일: 겹침 배치 대신 이미지 아래로 제목/캡션을 순서대로 쌓아 겹침 방지 */
+@media screen and (max-width: 520px) {
+  .collage-underwater {
+    width: 62%;
+  }
+
+  .collage-heading-serif {
+    position: static;
+    white-space: normal;
+    width: auto;
+    margin: 22px 24px 12px;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .collage-heading-serif.reveal-up,
+  .collage-heading-serif.reveal-up.revealed {
+    transform: none;
+  }
+
+  .collage-text-block {
+    position: static;
+    width: auto;
+    margin: 0 24px;
+  }
+
+  .collage-text-block.reveal-up {
+    transform: translateY(24px);
+  }
+
+  .collage-text-block.reveal-up.revealed {
+    transform: translateY(0) scale(1);
+  }
+
+  .collage-body-lines {
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .collage-row-overlap {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,247 @@
+.collection-hero-top {
+  background-color: transparent;
+  padding: 42px 24px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: visible;
+  --pull-video-height: 0px;
+}
+
+.pull-video-panel {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(100% + 48px);
+  margin: 0 -24px 0;
+  transform: translateY(-42px);
+  height: var(--pull-video-height);
+  max-height: 218px;
+  overflow: hidden;
+  background-color: var(--black);
+  z-index: 20;
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.32);
+  transition: height 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+.pull-video {
+  width: 100%;
+  height: 218px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.82) saturate(0.88);
+}
+
+.collection-hero-top--video-open .pull-video-panel {
+  pointer-events: auto;
+}
+
+.hero-poem-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: calc(-1 * var(--pull-video-height));
+  margin-bottom: 24px;
+  position: relative;
+  width: 100%;
+}
+
+/* 터치 기기: 탭으로 열리므로 열림/되감김을 고무줄처럼 부드럽게 */
+@media (hover: none) {
+  .pull-video-panel {
+    transition: height 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hero-poem-row {
+    transition: margin-top 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+.hero-poem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.brush-stroke-poem {
+  width: 140px;
+  height: 8px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  margin-bottom: 18px;
+}
+
+.hero-poem {
+  font-family: var(--font-kr);
+  text-align: center;
+  font-size: 13px;
+  line-height: 2.4;
+  color: var(--beige);
+  font-weight: 300;
+}
+
+.poem-line {
+  margin: 0;
+  white-space: nowrap;
+  text-align: justify;
+  text-align-last: justify;
+  width: 100%;
+  justify-content: center;
+  overflow: visible;
+}
+
+.hero-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  right: -6px;
+  top: 0;
+  padding: 10px; /* 모바일 터치 영역 확보 */
+  z-index: 25;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transition: opacity 0.16s ease;
+}
+
+.hero-scroll-indicator:active {
+  cursor: grabbing;
+}
+
+.collection-hero-top--pulling .hero-scroll-indicator {
+  opacity: 0;
+}
+
+.hero-scroll-indicator .scroll-text {
+  font-family: var(--font-serif);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: rgba(215, 206, 191, 0.72);
+  text-transform: lowercase;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  line-height: 1;
+}
+
+.pull-arrow {
+  width: 16px;
+  height: 48px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.pull-arrow-line {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(215, 206, 191, 0), rgba(215, 206, 191, 0.78));
+  transform-origin: top center;
+  animation: pullArrowDrop 1.65s ease-in-out infinite;
+}
+
+.pull-arrow-head {
+  position: absolute;
+  top: 34px;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid rgba(215, 206, 191, 0.78);
+  border-bottom: 1px solid rgba(215, 206, 191, 0.78);
+  transform: rotate(45deg);
+  animation: pullArrowHeadDrop 1.65s ease-in-out infinite;
+}
+
+@keyframes pullArrowDrop {
+  0% {
+    transform: scaleY(0.22);
+    opacity: 0.25;
+  }
+  48% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0.18;
+  }
+}
+
+@keyframes pullArrowHeadDrop {
+  0% {
+    top: 12px;
+    opacity: 0.25;
+  }
+  48% {
+    top: 37px;
+    opacity: 1;
+  }
+  100% {
+    top: 37px;
+    opacity: 0.18;
+  }
+}
+
+.hero-subnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid rgba(215, 206, 191, 0.14);
+  padding-bottom: 12px;
+  margin-top: auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subnav-item {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(215, 206, 191, 0.76);
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+.hero-subnav-item:hover,
+.hero-subnav-item.active {
+  color: var(--beige);
+}
+
+.brush-stroke-active {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0.7);
+  width: 100%;
+  height: 12px;
+  background: url("/images/logo/brush-line.png") no-repeat center;
+  background-size: contain;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-subnav-item.active .brush-stroke-active,
+.hero-subnav-item:hover .brush-stroke-active {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
+
+.hero-subnav:hover .hero-subnav-item.active:not(:hover) .brush-stroke-active {
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0.7);
+}
