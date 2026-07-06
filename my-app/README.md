@@ -2,7 +2,7 @@
 
 > 물 · 땅 · 숲 · 빛, 자연의 결을 담은 주얼리 브랜드 이커머스 웹앱
 
-[![Vercel](https://img.shields.io/badge/배포-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com)
+[![Vercel](https://img.shields.io/badge/배포-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://my-app-three-eosin-90.vercel.app)
 [![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/ko/docs/Web/JavaScript)
@@ -16,7 +16,7 @@
 **React + Vite**로 제작한 자연 영감 주얼리 브랜드 **GYEOL**의 이커머스 웹앱입니다.  
 Water / Earth / Forest / Light 4개의 자연 테마 컬렉션을 GSAP · Motion 인터랙션으로 표현하고, Firebase 인증과 Polar 결제를 연동해 실제 쇼핑몰 수준의 구매 흐름을 구현했습니다.
 
-**→ [배포 사이트 링크](#🔗-프로젝트-링크)**
+**→ [my-app-three-eosin-90.vercel.app](https://my-app-three-eosin-90.vercel.app)**
 
 ---
 
@@ -115,7 +115,7 @@ Water / Earth / Forest / Light 4개의 자연 테마 컬렉션을 GSAP · Motion
 
 | 구분 | 링크 |
 |:---|:---|
-| 배포 사이트 | — |
+| 배포 사이트 | [my-app-three-eosin-90.vercel.app](https://my-app-three-eosin-90.vercel.app) |
 | GitHub | [github.com/Sonwoosuk/fk](https://github.com/Sonwoosuk/fk) |
 | 기획서 / 노션 | — |
 | 디자인 (Figma) | — |
