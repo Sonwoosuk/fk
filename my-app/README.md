@@ -116,7 +116,7 @@ Water / Earth / Forest / Light 4개의 자연 테마 컬렉션을 GSAP · Motion
 | 구분 | 링크 |
 |:---|:---|
 | 배포 사이트 | [my-app-three-eosin-90.vercel.app](https://my-app-three-eosin-90.vercel.app) |
-| GitHub | [github.com/Sonwoosuk/fk](https://github.com/Sonwoosuk/fk) |
+| GitHub | [github.com/Sonwoosuk/GYEOL](https://github.com/Sonwoosuk/GYEOL) |
 | 기획서 / 노션 | — |
 | 디자인 (Figma) | — |
 
@@ -270,10 +270,10 @@ my-app/
 
 ```bash
 # 1. 레포지토리 클론
-git clone https://github.com/Sonwoosuk/fk.git
+git clone https://github.com/Sonwoosuk/GYEOL.git
 
 # 2. 의존성 설치
-cd fk/my-app
+cd GYEOL/my-app
 npm install
 
 # 3. 개발 서버 실행
